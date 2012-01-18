@@ -7,12 +7,13 @@
     <script>
       // Called when the url of a tab changes.
       function checkForValidUrl(tabId, changeInfo, tab) {
-        // If the letter 'g' is found in the tab's URL...
-        if (tab.url.indexOf('g') > -1) {
-          // ... show the page action.
-          // chrome.pageAction.show(tabId);
-	  window.alert(tab.url);
-        }
+        chrome.pageAction.show(tabId);
+	var url = "http://localhost:4567/add";
+
+	var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type" , "application/x-www-form-urlencoded");
+        xhr.send("uri="+encodeURIComponent(tab.url));
       };
 
       // Listen for any changes to the URL of any tab.
