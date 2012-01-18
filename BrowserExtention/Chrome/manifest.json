@@ -2,7 +2,7 @@
   "name": "LogBook",
   "version": "0.1",
   "description": "Share contents URL from Browser to other devices.",
-  "permissions" : ["tabs" ], 
+  "permissions" : ["http://*/", "tabs" ], 
   "background_page": "background.html",
   "page_action" : {
     "default_icon" : "icon.png", 
