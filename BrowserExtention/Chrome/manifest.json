@@ -1,9 +1,10 @@
 {
   "name": "LogBook",
   "version": "0.1",
+  "manifest_version": 2,
   "description": "Share contents URL from Browser to other devices.",
   "permissions" : ["http://*/", "tabs" ], 
-  "background_page": "background.html",
+  "background": "background.html",
   "page_action" : {
     "default_icon" : "icon.png", 
     "default_title" : "do action"
