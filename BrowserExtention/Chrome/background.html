@@ -17,7 +17,13 @@
       };
 
       // Listen for any changes to the URL of any tab.
+
       chrome.tabs.onUpdated.addListener(checkForValidUrl);
+      chrome.tabs.onSelectionChanged.addListener(function(tabId) {
+        lastTabId = tabId;
+	chrome.pageAction.show(lastTabId);
+        chrome.pageAction.setIcon({path: "icon.png", tabId: lastTabId});
+	});
     </script>
   </head>
 </html>
